@@ -1,7 +1,7 @@
 # Coffee House
 
-Привет, меня зовут **Никита**, я начинающий фронтенд разработчик.
+Hi, my name is **Nikita**, and I am a beginner front-end developer.
 
-Это мой первый проект, на котором я практиковал такие технологии как **HTML**, **CSS** и **JS**.
+This is my first project where I practiced the skills I learned in **HTML**, **CSS**, and **JS**.
 
-[Кликни тут](https://aggamix.github.io/coffe-house/pages/home/)
+[Click here](https://aggamix.github.io/coffe-house/pages/home/)
