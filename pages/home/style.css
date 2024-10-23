@@ -1,0 +1,1019 @@
+@import url(./normalize.css);
+
+@font-face {
+    font-family: 'Inter';
+    src: url(../../assets/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Inter 400';
+    src: url(../../assets/fonts/Inter/static/Inter-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Inter Italic';
+    src: url(../../assets/fonts/Inter/static/Inter-Italic.ttf);
+}
+
+:root {
+    --text-dark: #403F3D;
+    --text-light: #E1D4C9;
+    --text-accent: #B0907A;
+    --background-body-color: #E1D4C9;
+    --background-container-color: #665F55;
+    --background-backdrop-color: rgba(64, 63, 61, 0.8);
+    --border-dark: rgba(102, 95, 85, 1);
+    --border-light: rgba(193, 182, 173, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 40px;
+    font-family: 'Inter';
+    background-color: var(--background-body-color);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    padding: 0;
+    border: 0;
+}
+
+.header_menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.nav_bar {
+    display: flex;
+    gap: 40px;
+}
+
+.nav_bar-link {
+    position: relative;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.menu_button {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+    cursor: pointer;
+    background-color: var(--background-body-color);
+}
+
+.nav_bar-link::before {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 100%;
+    background-color: var(--text-dark);
+    content: '';
+}
+
+.burger_menu {
+    display: none;
+}
+
+.burger_menu_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 6px;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--border-dark);
+    border-radius: 50px;
+}
+
+.burger_menu_line {
+    width: 16px;
+    height: 1.5px;
+    background-color: var(--border-dark);
+    border-radius: 100px;
+}
+
+.header_menu_wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.header_menu_mobile {
+    position: absolute;
+    z-index: 3;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 100px;
+    padding: 60px 0px;
+    width: 100%;
+    height: calc(100dvh - 60px);
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    border-radius: 20px;
+    background-color: var(--background-body-color);
+}
+
+.nav_bar_mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 60px;
+}
+
+.menu_button_mobile {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    cursor: pointer;
+    background-color: var(--background-body-color);
+}
+
+.header_menu_mobile .nav_bar-link {
+    position: relative;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+@keyframes open-menu {
+    0% {
+        transform: translateX(100vw);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes close-menu {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+.enjoy_section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    max-width: 100%;
+    height: 644px;
+    overflow: hidden;
+}
+
+#enjoyVideo {
+    position: relative;
+    z-index: 0;
+    width: 1360px;
+}
+
+.enjoy_menu {
+    position: absolute;
+    z-index: 1;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    max-width: 530px;
+    padding: 100px 7.2%;
+}
+
+.enjoy_title {
+    font-size: 72px;
+    font-style: normal;
+    line-height: 75.6px;
+    color: var(--text-light);
+}
+
+.enjoy_title_accent {
+    font-family: 'Inter Italic';
+    color: var(--text-accent);
+}
+
+.enjoy_info {
+    font-family: 'Inter 400';
+    font-size: 16px;
+    font-style: normal;
+    line-height: 24px;
+    color: var(--text-light);
+}
+
+.enjoy_button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    padding: 20px 78px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    cursor: pointer;
+    border-radius: 100px;
+    background-color: var(--background-body-color);
+}
+
+.enjoy_button svg {
+    display: none;
+}
+
+.fav_coffee_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
+    width: 100%;
+    margin: 100px 0;
+}
+
+.fav_coffee_title {
+    text-align: center;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 75px;
+    color: var(--text-dark);
+}
+
+.fav_coffee_title_accent {
+    font-family: 'Inter Italic';
+    color: var(--text-accent);
+}
+
+.fav_coffee_carousel {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fav_coffee_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 100px;
+    border: 1px solid var(--border-dark);
+    background-color: var(--background-body-color);
+}
+
+.fav_coffee_wrapper {
+    width: 480px;
+    overflow: hidden;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+.fav_coffee_block_cards {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 1440px;
+    transition: all 1s ease-in;
+}
+
+.fav_coffee_card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 100%;
+}
+
+.fav_coffee_card img {
+    max-width: 100%;
+}
+
+.fav_coffee_card_info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    align-items: center;
+}
+
+.fav_coffee_card_title {
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.fav_coffe_card_description {
+    text-align: center;
+    font-family: 'Inter 400';
+    font-size: 16px;
+    font-style: normal;
+    line-height: 24px;
+}
+
+.lower_bar {
+    display: flex;
+    column-gap: 12px;
+}
+
+.lower_bar_item {
+    position: relative;
+    width: 40px;
+    height: 4px;
+    border-radius: 100px;
+    background-color: var(--border-light);
+}
+
+.lower_bar_item--active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    background-color: var(--border-dark);
+}
+
+.about_section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    margin: 0 0 100px 0;
+}
+
+.about_title {
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 75px;
+    color: var(--text-dark);
+}
+
+.about_title_accent {
+    font-family: 'Inter Italic';
+    color: var(--text-accent);
+}
+
+.about_gallery {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.about_gallery_column {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    width: 48.55%;
+}
+
+.about_gallery_item {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    transition: background-size 0.3s ease-in;
+}
+
+.about_gallery_item_big {
+    height: 590px;
+}
+
+.about_gallery_item_small {
+    height: 430px;
+}
+
+.item1 {
+    background: url(../../assets/img/Home/about-1.png) 50% 50% / 726px 726px no-repeat;
+}
+
+.item4 {
+    background: url(../../assets/img/Home/about-4.png) 50% 50% / 726px 726px no-repeat;
+}
+
+.item2 {
+    background: url(../../assets/img/Home/about-2.png) 50% 50% / 726px 726px no-repeat;
+}
+
+.item3 {
+    background: url(../../assets/img/Home/about-3.png) 50% 50% / 726px 726px no-repeat;
+}
+
+.mobile_app_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 100px 0;
+}
+
+.mobile_app_info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    width: 46%;
+}
+
+.mobile_app_title {
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 75px;
+    color: var(--text-dark);
+}
+
+.mobile_app_title_accent {
+    font-family: 'Inter Italic';
+    color: var(--text-accent);
+}
+
+.mobile_app_description {
+    font-family: 'Inter 400';
+    font-size: 16px;
+    font-style: normal;
+    line-height: 24px;
+}
+
+.mobile_app_links {
+    display: flex;
+    gap: 20px;
+}
+
+.mobile_app_btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 200px;
+    padding: 12px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    border: 1px solid var(--border-dark);
+    background-color: var(--background-body-color);
+}
+
+.mobile_app_btn_text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.mobile_app_img {
+    width: 46.32%;
+}
+
+.mobile_app_img img {
+    width: 100%;
+}
+
+.btn_text_small {
+    align-self: flex-start;
+    font-size: 10px;
+    line-height: 14px;
+}
+
+.btn_text_big {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.contact_us {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    margin: 0 0 40px 0;
+    padding: 100px 7.35%;
+    border-radius: 40px;
+    background-color: var(--background-container-color);
+}
+
+.contact_us_column1 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    width: 530px;
+}
+
+.contact_us_column1_title {
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 75px;
+    color: var(--text-light);
+}
+
+.contact_us_title_accent {
+    font-family: 'Inter Italic';
+    color: var(--text-accent);
+}
+
+.contact_us_links {
+    display: flex;
+    gap: 12px;
+}
+
+.contact_us_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 100px;
+    border: 1px solid var(--border-light);
+    background-color: var(--background-container-color);
+}
+
+.contact_us_column2 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
+.contact_us_column2_title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    color: var(--text-light);
+}
+
+.contact_us_contacts {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.contact_us_info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.contact_us_info::before {
+    display: none;
+    position: absolute;
+    width: 70%;
+    height: 2px;
+    top: 100%;
+    background-color: var(--text-light);
+    content: '';
+}
+
+.contact_us_info_text {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--text-light);
+}
+
+
+@media (hover: hover) {
+
+    .nav_bar-link:hover::before {
+        display: block;
+    }
+
+    .enjoy_button:hover span {
+        left: -30%;
+        position: relative;
+    }
+
+    .enjoy_button:hover svg {
+        left: 58%;
+        position: absolute;
+        display: block;
+    }
+
+    .fav_coffee_btn:hover {
+        transition: ease-in 0.2s;
+        background-color: var(--background-container-color);
+    }
+
+    .fav_coffee_btn:hover svg path {
+        stroke: var(--text-light);
+    }
+
+    .item1:hover,
+    .item4:hover,
+    .item2:hover,
+    .item3:hover {
+        background-size: 660px 660px;
+    }
+
+    .mobile_app_btn:hover {
+        transition: ease-in 0.4s;
+        background-color: var(--background-container-color);
+    }
+
+    .mobile_app_btn:hover svg path {
+        fill: var(--text-light);
+    }
+
+    .mobile_app_btn:hover .mobile_app_btn_text {
+        color: var(--text-light);
+    }
+
+    .contact_us_btn:hover {
+        transition: ease-in 0.4s;
+        background-color: var(--background-body-color);
+    }
+
+    .contact_us_btn:hover svg path {
+        stroke: var(--text-dark);
+    }
+
+    .contact_us_info:hover::before {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .fav_coffee_wrapper {
+        width: 480px;
+    }
+
+    .fav_coffee_block_cards {
+        width: 1440px;
+    }
+}
+
+@media screen and (min-width: 381px) and (max-width: 768px) {
+
+    body {
+        max-width: 100vw;
+        padding: 0px 5.3vw;
+    }
+
+    .nav_bar {
+        display: none;
+    }
+
+    .menu_button {
+        display: none;
+    }
+
+    .burger_menu {
+        display: block;
+    }
+
+    .enjoy_menu {
+        max-width: 69.01vw;
+        padding: 100px 7.81vw;
+    }
+
+    .enjoy_title {
+        font-size: 9.38vw;
+        line-height: 9.84vw;
+    }
+
+    .enjoy_button svg {
+        left: 58%;
+        position: absolute;
+        display: block;
+    }
+
+    .enjoy_button span {
+        left: -30%;
+        position: relative;
+    }
+
+    .fav_coffee_title {
+        font-size: 7.81vw;
+        line-height: 9.76vw;
+    }
+
+    .fav_coffee_btn {
+        width: 7.81vw;
+        height: 7.81vw;
+        border-radius: 13vw;
+    }
+
+    .fav_coffee_wrapper {
+        width: 62.5vw;
+    }
+
+    .fav_coffee_block_cards {
+        width: 187.5vw;
+    }
+
+    .fav_coffee_card {
+        row-gap: 20px;
+        max-width: 62.5vw;
+    }
+
+    .about_title {
+        font-size: 7.81vw;
+        line-height: 9.76vw;
+    }
+
+    .about_gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about_gallery_column {
+        width: 100%;
+    }
+
+    .item2 {
+        display: none;
+    }
+
+    .item3 {
+        display: none;
+    }
+
+    .mobile_app_section {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 100px;
+    }
+
+    .mobile_app_info {
+        width: 100%;
+    }
+
+    .mobile_app_title {
+        font-size: 7.91vw;
+        line-height: 9.76vw;
+    }
+
+    .mobile_app_links {
+        flex-wrap: wrap;
+    }
+
+    .mobile_app_img {
+        width: 91%;
+    }
+
+    .contact_us {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 13.02vw;
+        padding: 13.02vw 7.8125vw;
+    }
+
+    .contact_us_column1 {
+        width: 100%;
+    }
+
+    .contact_us_column1_title {
+        font-size: 7.81vw;
+        line-height: 9.76vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .fav_coffee_carousel {
+        justify-content: center;
+    }
+
+    .fav_coffee_btn {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    body {
+        max-width: 100vw;
+        padding: 0 4.21vw;
+    }
+
+    .nav_bar {
+        display: none;
+    }
+
+    .menu_button {
+        display: none;
+    }
+
+    .burger_menu {
+        display: block;
+    }
+
+    .enjoy_section {
+        height: 552px;
+    }
+
+    .enjoy_menu {
+        padding: 100px 5%;
+        max-width: 100vw;
+    }
+
+    .enjoy_title {
+        font-size: 11.05vw;
+        line-height: 12.71vw;
+    }
+
+    .enjoy_info {
+        font-size: 4.21vw;
+        line-height: 6.31vw;
+    }
+
+    .enjoy_button svg {
+        left: 58%;
+        position: absolute;
+        display: block;
+    }
+
+    .enjoy_button span {
+        left: -30%;
+        position: relative;
+    }
+
+    .enjoy_button {
+        padding: 5.26vw 20.5vw;
+        font-size: 4.21vw;
+        line-height: 6.31vw;
+    }
+
+    .fav_coffee_title {
+        font-size: 8.5vw;
+        line-height: 10.5vw;
+    }
+
+    .fav_coffee_btn {
+        display: none;
+    }
+
+    .fav_coffee_wrapper {
+        width: 91.58vw;
+    }
+
+    .fav_coffee_block_cards {
+        width: 274.7vw;
+    }
+
+    .fav_coffee_card {
+        max-width: 100%;
+    }
+
+    .fav_coffee_card_title {
+        font-size: 6.31vw;
+        line-height: 7.89vw;
+    }
+
+    .fav_coffe_card_description {
+        font-size: 4.21vw;
+        line-height: 6.31vw;
+    }
+
+    .about_title {
+        font-size: 8.42vw;
+        line-height: 10.5vw;
+    }
+
+    .about_gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about_gallery_column {
+        width: 100%;
+    }
+
+    .item2 {
+        display: none;
+    }
+
+    .item3 {
+        display: none;
+    }
+
+    .mobile_app_section {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .mobile_app_info {
+        width: 100%;
+    }
+
+    .mobile_app_title {
+        font-size: 8.42vw;
+        line-height: 10.5vw;
+    }
+
+    .mobile_app_description {
+        font-size: 4.21vw;
+        line-height: 6.31vw;
+    }
+
+    .mobile_app_links {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .mobile_app_btn {
+        max-width: 52.6vw;
+        padding: 3.16vw 5.26vw;
+        border-radius: 26.3vw;
+    }
+
+    .mobile_app_img {
+        width: 100%;
+    }
+
+    .btn_text_small {
+        font-size: 2.63vw;
+        line-height: 3.68vw;
+    }
+
+    .btn_text_big {
+        font-size: 4.21vw;
+        line-height: 6.31vw;
+    }
+
+    .contact_us {
+        display: flex;
+        flex-direction: column;
+        gap: 10.52vw;
+        padding: 15.8vw 4.21vw;
+    }
+
+    .contact_us_column1 {
+        max-width: 100%;
+    }
+
+    .contact_us_column1_title {
+        font-size: 8.4vw;
+        line-height: 10.5vw;
+    }
+
+    .contact_us_title_accent br {
+        display: none;
+    }
+
+    .contact_us_column2 {
+        align-self: flex-start;
+    }
+
+    .contact_us_column2_title {
+        font-size: 6.31vw;
+        line-height: 7.89vw;
+    }
+
+    .contact_us_contacts {
+        row-gap: 5vw;
+    }
+
+    .contact_us_info_text {
+        font-size: 4.21vw;
+        line-height: 6.31vw;
+    }
+}
